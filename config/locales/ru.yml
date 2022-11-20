@@ -35,6 +35,7 @@ ru:
 
   message-add-to-cart-success: Продукт добавлен в корзину успешно！
   message-already-added: Продукт был добавлен в корзину.
+  message-need-to-sign-in: Нужно войти
   message-confirm-clear-cart: Вы уверены что хотите очистить корзину?
   message-clear-cart-success: Корзина очищена
   message-payment-success: Оплата завершена.
@@ -156,6 +157,7 @@ ru:
   product-quantity-none: Нет в наличиии
   product-is-hidden: Продукт был скрыт
   btn-add-to-cart: Добавить в корзину
+  btn-add-to-cart-to-login: Нужно войти что бы добавлять в корзину
   btn-add-to-cart-none: Нет в наличии
   btn-continue: Продолжить покупки
   nav-currency: Валюта

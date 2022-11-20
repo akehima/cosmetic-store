@@ -159,6 +159,7 @@ en:
   product-quantity-none: No Stock
   product-is-hidden: This product is off the shelf.
   btn-add-to-cart: Add to Cart
+  btn-add-to-cart-to-login: Need to login
   btn-add-to-cart-none: No More Stock
   btn-continue: Keep on Shopping
   nav-currency: Currency
@@ -251,6 +252,7 @@ en:
   
   message-add-to-cart-success: Added to cart.
   message-already-added: Already added.
+  message-need-to-sign-in: Need to sign in
   message-confirm-clear-cart: Are you sure to clear the cart?
   message-clear-cart-success: The cart is cleared.
   message-payment-success: Payment completed.

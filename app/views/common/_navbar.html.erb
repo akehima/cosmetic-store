@@ -36,7 +36,7 @@
               
               <li>
                 <%= link_to carts_path do  %>
-                  <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
+                  <i class='fa fa-shopping-cart'></i> ( <%= current_cart&.products&.count || 0 %> )
                 <% end %>
               </li>
               
@@ -65,6 +65,9 @@
                   <ul class="dropdown-menu">
                     <% if current_user.admin? %>
                       <li> <%= link_to(t('admin-access'), admin_products_path) %> </li>
+                      <li class="divider"> </li>
+                    <% elsif current_user.superadmin? %>
+                      <li> <%= link_to(t('admin-access'), 'superadmin') %> </li>
                       <li class="divider"> </li>
                     <% end %>
                     

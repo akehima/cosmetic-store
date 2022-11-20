@@ -32,6 +32,7 @@ gem 'ransack'
 gem 'braintree'
 gem 'bigdecimal', '1.3.5'
 gem 'social-share-button'
+gem 'rails_admin'
 gem 'masonry-rails'
 
 group :development, :test do

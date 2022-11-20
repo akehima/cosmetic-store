@@ -8,12 +8,25 @@
 
 if User.find_by(email: 'admin@test.com').nil?
   u = User.new
-  u.name = 'Менеджер тестирования'
+  u.name = 'Менеджер'
   u.email = 'admin@rails.com'
   u.nickname = 'Admin'
   u.password = 'admin_password'
   u.password_confirmation = 'admin_password'
-  u.is_admin = true
+  u.role = :admin
+  u.save
+else
+  puts 'Эта учетная запись была создана, и она повторяется.'
+end
+
+if User.find_by(email: 'superadmin@test.com').nil?
+  u = User.new
+  u.name = 'Суперадмин'
+  u.email = 'superadmin@rails.com'
+  u.nickname = 'superdmin'
+  u.password = 'admin_password'
+  u.password_confirmation = 'admin_password'
+  u.role = :superadmin
   u.save
 else
   puts 'Эта учетная запись была создана, и она повторяется.'

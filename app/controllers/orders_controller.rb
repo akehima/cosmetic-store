@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     if session[:currency].present? 
       @currency_s = session[:currency]
     else 
-      @currency_s = 'Singapore Dollar'
+      @currency_s = 'US Dollar'
     end
     @currency = Currency.find_by(name: @currency_s)
     @order.currency = @currency.symbol

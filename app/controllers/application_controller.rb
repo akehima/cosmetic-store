@@ -31,11 +31,14 @@ class ApplicationController < ActionController::Base
   private
 
   def find_cart
-    cart = Cart.find_by(id: session[:cart_id])
-    if cart.blank?
+    cart = current_user&.cart
+    if cart.blank? && current_user
       cart = Cart.create
+      current_user.cart = cart
+      session[:cart_id] = cart.id
+      return cart
+    elsif cart && current_user
+      return cart
     end
-    session[:cart_id] = cart.id
-    return cart
   end
 end
