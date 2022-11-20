@@ -26,4 +26,6 @@ And you can use application in localhos:3000 after running:
 rails s
 ```
 
+## 🚀🚀🚀 [Heroku link](cosmeticstoreapp.herokuapp.com) 🚀🚀🚀
+
 ![](https://github.com/akehima/cosmetic-store/blob/main/dance.gif)
