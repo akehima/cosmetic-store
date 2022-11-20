@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t('cosmetic-store') %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <%= render "common/navbar" %>
+        <%= render "common/flashes" %>
+      </div>
+      <div class="row">
+        <div class="col-md-2 nav-sidebar">
+          <ul class="list-unstyled">
+            <!-- Управление продуктом -->
+            <li><%= link_to admin_products_path do %> <span class="fa fa-cube"></span> <span><%= t('admin-product') %></span><% end %></li>
+            <!-- Управление торговой маркой -->
+            <li><%= link_to admin_brands_path do %> <span class="fa fa-google-wallet"></span> <span><%= t('admin-brand') %></span><% end %></li>
+            <!-- Управление категориями -->
+            <li><%= link_to admin_categories_path do %> <span class="fa fa-cubes"></span> <span><%= t('admin-category') %></span><% end %></li>
+            <!-- Управление заказами -->
+            <li><%= link_to admin_orders_path do %> <span class="fa fa-th-list"></span> <span><%= t('admin-order') %></span><% end %></li>
+            <!-- Управление рекламой домашней страницы -->
+            <li><%= link_to admin_intros_path do %> <span class="fa fa-film"></span> <span><%= t('admin-homepage') %></span><% end %></li>
+          </ul>
+        </div>
+        <div class="col-md-10 admin-box">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render "common/footer" %>
+  </body>
+</html>

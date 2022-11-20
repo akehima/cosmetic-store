@@ -1,0 +1,78 @@
+<div class='product-box'>
+  <div class='container'>
+    <div class='row content-box'>
+      <div class='col-md-12'>
+        
+        <h3><i class='fa fa-shopping-cart'></i> <%= t('cart-list') %></h3>
+        <hr />
+        
+        <div class='row'>
+          
+            <% current_cart.cart_items.each do |cart_item| %>
+            <div class='col-md-12 cart-item-box'>
+              <% if cart_item.product.product_images.present? %>
+                
+                <%= image_tag(cart_item.product.product_images[0].image.other.url)%>
+              <% else %>
+                <%= image_tag('http://via.placeholder.com/200x200&text=No Pic') %>
+              <% end %>
+              <div class='name'><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></div>
+              <div class='price'><%= render_product_price(cart_item.product) %></div>
+              <div class='quantity'>x <%= cart_item.quantity %></div>
+              <div class='count'>- <%= render_product_price_count(cart_item.product,cart_item.quantity) %></div>
+              <hr/>
+            </div>
+            <% end %>
+          </div>
+        <br/>
+        
+        <div class='clearfix'>
+          <div class='pull-right'><%= t('f-cart-total') %> <%= render_cart_total_price(current_cart) %></div>
+        </div>
+
+        <hr/>
+        
+        <div class='col-md-6 col-md-offset-3'>
+        <h3><i class='fa fa-credit-card'></i> <%= t('checkout-index') %></h3>
+          
+          <div class='order-form'>
+            <%= simple_form_for @order do |f| %>
+              <div class='form-group'>
+
+              
+              <legend><%= t('f-billing-info') %></legend>
+              <%= f.input :billing_name, placeholder: t('billing-name'), input_html: {value: current_user.name, class: 'width-50'}, :label => t('f-billing-name') %>
+              <%= f.input :billing_address, placeholder: t('billing-address'), input_html: {value: current_user.address}, :label => t('f-billing-address') %>
+
+              <hr/>
+
+              
+              <legend><%= t('f-shipping-info') %></legend>
+              <%= f.input :shipping_name, placeholder: t('shipping-name'), input_html: {value: current_user.name, class: 'width-50'}, :label => t('f-shipping-name') %>
+              <%= f.input :shipping_phone, placeholder: t('shipping-phone'), input_html: {value: current_user.phone}, :label => t('f-shipping-phone') %>
+              <%= f.input :shipping_address, placeholder: t('shipping-address'), input_html: {value: current_user.address}, :label => t('f-shipping-address') %>
+
+              <hr/>
+
+              
+              <legend><%= t('f-payment-method') %></legend>
+              <% Order::PAYMENT_METHOD.each do |payment| %>
+                <label class="paymant">
+                  <%= f.radio_button :payment_method, payment %>
+                  <%= t(payment, :scope => 'order.payment_method') %>
+                </label>
+              <% end %>
+
+              </div>
+
+              
+              <div class='form-actions'>
+                <%= f.submit t('btn-order-create'), class: 'btn btn-md btn-default' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

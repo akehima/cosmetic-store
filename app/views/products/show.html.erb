@@ -1,0 +1,109 @@
+<div class='product-box product-show'>
+  <div class='container'>
+    <%= image_tag(@product.category.category_group.image, class: 'background-image') %>
+    <%= render "products/menu" %>
+
+    
+    <% if !@product.hidden?  %>
+      
+      <div class='col-xs-12 col-md-8 product-image'>
+        <div class='row'>
+          <% if @product_images.present? %>
+          <div class='col-md-12'>
+            <% if @product.is_chosen %>
+              <div class="chosen-box location"><%= t('product-chosen') %></div>
+            <% end %>
+            <%= image_tag(@product_images.first.image.main.url, class: 'main-image thumbnail') %>
+          </div>
+            <% @product_images.each_with_index do |p| %>
+              <div class='col-md-2 col-sm-4 col-xs-6 image-box'>
+                <%= image_tag(p.image.other.url, class: 'list-image thumbnail') %>
+              </div>
+            <% end %>
+          <% else %>
+            <%= image_tag('http://via.placeholder.com/400x400&text=No Pic', class: 'thumbnail') %>
+          <% end %>
+        </div>
+      </div>
+      
+      <%= form_tag add_to_cart_product_path(@product), :method => :post, :remote => true do %>
+        <div class='col-xs-12 col-md-4 product-detail'>
+          <div>
+            <h1><%= @product.title %></h1>
+            <div class="price">
+              <div class="left-box">
+                <h3><%= render_product_price(@product) %></h3>
+              </div>
+              <div class="right-box currency">
+                
+                <%= render 'products/currency' %>
+              </div>
+            </div>
+            <p><%= simple_format(@product.description) %></p>
+          </div>
+          <hr />
+          <div>
+            <p><%= t('product-brand') %>：<%= link_to(@product.brand.name, products_path(:brand => @product.brand.name)) %></p>
+            <%= render 'products/specification' %>
+            <br/>
+            <p>
+              
+              <% if @product.quantity - @orderSum > 0 %>
+              <div class="quantity-box">
+                <div class="left-box"><%= t('product-quantity') %>：</div>
+                <div class="left-box quantity-button">
+                  <%= link_to("-", "", id: "quantity-down", class: "quantity-actions") %>
+                  <input type="text" name="quantity" value="1" id="quantity" max="<%= @product.quantity - @orderSum %>" class="quantity-input">
+                  <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
+                </div>
+                <% if @product_stock <= 10 %>
+                  <span class="quantity-stock">(<%=t('product.stock')%>:<%= @product_stock %>)</span>
+                <% end %>
+              </div>
+              <% else %>
+                <div class="quantity-box">
+                  <%= t('product-quantity') %>：<span class="quantity-none"><%= t('product-quantity-none') %></span>
+                </div>
+              <% end %>
+            </p>
+
+          </div>
+          <hr />
+          
+          <div class='row'>
+            <div class='left-box wish'>
+              <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
+                <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
+                  <i class='fa fa-check fa-fw'> </i><%= t('wish-list-remove') %>
+                <% end %>
+              <% else %>
+                <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
+                  <i class='fa fa-plus fa-fw'> </i><%= t('wish-list-add') %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class='right-box share'>
+              <%= social_share_button_tag(@product.title, :allow_sites => %w(facebook twitter reddit vkontakte email), :image => @product_images&.first&.image&.main&.url || ActionController::Base.helpers.image_tag('default_image.png'), desc: @product.description, via: 'Cosmetic store - '+@product.title, 'data-twitter-title' => 'Cosmetic store - '+@product.title) %>
+            </div>
+          </div>
+          
+          <% if @orderSum < @product.quantity && @product.quantity > 0 %>
+            <button class="btn btn-md btn-default" type="submit">
+              <%= t('btn-add-to-cart')%>
+            </button>          
+          <% else %>
+            <button class="btn btn-md btn-default" disabled="disabled" type="button">
+              <%= t('btn-add-to-cart-none')%>
+            </button>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class='buy-box'>
+        <h1><%= t('product-is-hidden') %></h1>
+        <br/>
+        <%= link_to(t('btn-continue'), products_path, class:'btn btn-lg btn-default' ) %>
+      </div>
+    <% end %>
+  </div>
+</div>

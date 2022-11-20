@@ -1,0 +1,36 @@
+<div class="product-box">
+  <div class="container">
+    <%= image_tag("product_bg.jpg", class: "background-image") %>
+    <%= render "products/menu" %>
+    <% if @products.blank?%>
+      <div class="search-error">
+        <h2><%= t('search-no-data')%></h2>
+      </div>
+    <% else %>
+
+      <div class='row'>
+        <% @products.each do |product| %>
+          <div class='col-xs-12 col-sm-4 col-md-3 product-content'>
+            <%= link_to product_path(product) do %>
+              
+              <% if product.product_images.present? %>
+                
+                <%= image_tag(product.product_images[0].image.other.url, class: 'thumbnail')%>
+              <% else %>
+                <%= image_tag('http://via.placeholder.com/200x200&text=No Pic', class: 'thumbnail') %>
+              <% end %>
+            <% end %>
+            <div class="product-info">
+              <p><%= link_to(product.title , product_path(product)) %></p>
+              <p>$ <%= product.price %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="page-box">
+        <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => t('previous-label'), :next_label => t('next-label') %>
+      </div>
+    <% end %>
+  </div>
+</div>

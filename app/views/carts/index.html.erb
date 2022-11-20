@@ -1,0 +1,83 @@
+<div class="product-box">
+  <div class="container">
+    <%= render "common/menu" %>
+    <div class='row content-box'>
+      
+      <h3><i class='fa fa-shopping-cart'></i> <%= t('cart-index') %></h3>
+      <hr />
+      <div class="row">
+        
+        <% if current_cart.cart_items.length > 0 %>
+          
+          <div class='col-xs-12 col-md-8 cart-item-box'>
+            <% current_cart.cart_items.each do |cart_item| %>
+              
+              <% if cart_item.product.product_images.present? %>
+                
+                <%= image_tag(cart_item.product.product_images[0].image.other.url)%>
+              <% else %>
+                <%= image_tag('http://via.placeholder.com/200x200&text=No Pic') %>
+              <% end %>
+              
+              <div class="name"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></div>
+              
+              <div class="price"><%= render_product_price(cart_item.product) %></div>
+              
+              <div class="quantity"> x <input type="text" name="quantity" value="<%= cart_item.quantity %>" id="<%= cart_item.product.id %>" max="<%= render_product_quantity(cart_item.product) %>" class="cart-quantity-input"></div>
+              <div class="count"><%= render_product_price_count(cart_item.product,cart_item.quantity) %></div>
+              
+              <div class="remove">
+                <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                  <i class='fa fa-remove'></i>
+                <% end %>
+              </div>
+              <hr/>
+            <% end %>
+          </div>
+          <div class='col-xs-12 col-md-4 cart-checkout-box'>
+            <div class='clearfix'>
+              <span class='pull-left'><%= t('f-cart-product-count') %></span>
+              <span class='pull-right'><%= render_cart_total_price(current_cart) %></span>
+            </div>
+            </br>
+            <div class='clearfix'>
+              <span class='pull-left'><%= t('f-cart-shipping-fee') %></span>
+              <span class='pull-right'><%= t('f-cart-free-shipping') %></span>
+            </div>
+            <hr/>
+            
+            <div class='clearfix'>
+              <span class='pull-left'><%= t('f-cart-total') %></span>
+              <span class='pull-right'><%= render_cart_total_price(current_cart) %></span>
+            </div>
+            <br/>
+            
+            <div class='clearfix notice'>
+              <p><%= t('cart-notice') %></p>
+            </div>
+            
+            <div class='clearfix'>
+              <%= link_to(t('btn-checkout'), checkout_carts_path, method: :post, class: 'btn btn-md btn-default') %>
+            </div>
+          </div>
+        
+        <% else %>
+          <div class='col-md-12'>
+            <div class="buy-box">
+              <h3><%= t('cart-no-data') %></h3>
+              <h3><%= t('cart-suggest') %></h3>
+              <br/>
+              
+              <div class='col-md-8 col-md-offset-2'>
+                <%= render "shared/suggest" %>
+              </div>
+              <div class='col-md-12'>
+                <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-lg btn-default' ) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

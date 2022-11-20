@@ -1,0 +1,108 @@
+<div class="welcome-box">
+  <section class="intro-box">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="intro" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <% @intros.each_with_index do |intro,index| %>
+              <% if index == 0 %>
+                <div class="item active">
+              <% else %>
+                <div class="item">
+              <% end %>
+                <%= link_to intro.link, target: "_blank" do %>
+                  <%= image_tag(intro.image) %>
+                  <div class="carousel-caption">
+                    <h3><%= intro.title %></h3>
+                    <p><%= intro.content %></p>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+
+          <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#intro" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="show-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2><%= t('th-featured-products') %></h2>
+        <div class="short-line"></div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="box">
+              <%= render "show_product", product: @featured_products[7] %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box">
+              <%= render "show_product", product: @featured_products[6] %>
+            </div>
+            <div class="box">
+              <%= render "show_product", product: @featured_products[5] %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box three">
+              <%= render "show_product", product: @featured_products[4] %>
+            </div>
+            <div class="box three">
+              <%= render "show_product", product: @featured_products[3] %>
+            </div>
+            <div class="box three">
+              <%= render "show_product", product: @featured_products[2] %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box">
+              <%= render "show_product", product: @featured_products[1] %>
+            </div>
+            <div class="box">
+              <%= render "show_product", product: @featured_products[0] %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="brand-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2><%= t('th-brands') %></h2>
+        <div class="short-line"></div>
+        <%= image_tag("brand_1.png") %>
+        <%= image_tag("brand_2.png") %>
+        <%= image_tag("brand_3.png") %>
+        <%= image_tag("brand_4.png") %>
+        <%= image_tag("brand_10.png") %>
+        <%= image_tag("brand_6.png") %>
+        <%= image_tag("brand_7.png") %>
+        <%= image_tag("brand_8.png") %>
+        <%= image_tag("brand_9.png") %>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="push-box">
+    <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-push' ) %>
+  </section>
+
+  
+  <div class="goTop">
+    <span class="fa fa-chevron-up"></span>
+  </div>
+</div>

@@ -1,0 +1,296 @@
+ru:
+# title & brand
+  cosmetic-store: COSMETIC STORE
+
+# Devise
+  devise:
+    failure:
+      unauthenticated: Вы должны войти
+      not_found_in_database: Пользователь не найден
+      invalid: email или папроль не верны.
+    sessions:
+      signed_in: Добро пожаловать!
+      signed_out: Вы успешно вышли
+
+  dv-warn-email: Пожалуйста введите email.
+  dv-warn-name:  Пожалуйста введите имя.
+  dv-warn-pwd: Пароль не верный, проверьте и попробуйте ещё раз.
+  dv-warn-pwd-characters: Пароль должен состоять из 6 ~ 16 символов.
+
+  dv-login: Войти
+  dv-signup: Зарегистрироватся
+  dv-email: Email
+  dv-pwd: Пароль
+  dv-remember-me: Запомнить меня
+  dv-forgot-pwd: Забыли пароль?
+  dv-check-email: you@example.com
+  dv-name: User Name
+  dv-find-pwd: Найти пароль
+  dv-account-signin: Войти
+  dv-no-account-signup: Зарегистрироватся
+  dv-user: Пользователь
+  dv-admin: Администратор
+  dv-set-pwd: Используйте 6 ~ 16 символов.
+  dv-confirm-pwd: Подтвердить пароль
+
+  message-add-to-cart-success: Продукт добавлен в корзину успешно！
+  message-already-added: Продукт был добавлен в корзину.
+  message-confirm-clear-cart: Вы уверены что хотите очистить корзину?
+  message-clear-cart-success: Корзина очищена
+  message-payment-success: Оплата завершена.
+  message-cancel-request-sent: Запрос на отмену успешно отправлен
+  message-payment-failed: Оплата неуспешна
+
+  order:
+    order_placed: На рассмотрении
+    paid: Оплачено
+    shipping: В пути
+    shipped: Доставлено
+    order_cancelled: Отменёно
+    good_returned: Возвращено
+
+  user-sign-up: Зарегистрироватся
+  user-log-in: Войти
+  user-had-account: Пожалуйста войдите
+  user-have-not-account: Зарегистрироватся
+  user-forget-psw: Забыли пароль?
+  user-find-psw: Найти пароль
+  user-remember-me: Запомнить меня
+  my-profile: Мой профиль
+  name: Имя
+  nickname: nickname
+  address: Адрес
+  phone: Телефон
+  birthday: Дата рождения
+  gender: Пол
+  save: Сохранить
+  male: M
+  female: F
+  warning-not-admin: Вы не имеете права!
+
+  # Navbar
+  signup: Зарегистрироватся
+  login: Войти
+  logout: Выйти
+  greeting: Приветствуем
+  wish-list: Мои желания
+  cart: Корзина
+  brand-access: Brand Access
+  recommend-access: Recommend Access
+  product-access: Продукты
+  admin-access: Консоль админестратора
+  account-order-access: Заказы
+  user-center: Профиль
+  user-order: Заказы
+  language: Язык
+  keywords: Найти продукт
+
+  f-options: Настройки
+  f-hide: Спрятать
+  f-submit: Подтвердить
+  f-image-upload: Загрузить изображение
+  notice-no-image: Нет изображения
+  btn-publish: Опубликовать
+  btn-hide: Спрятать
+  btn-edit: Редактировать
+  btn-delete: Удалить
+
+  brand-index: Бренды
+  brand-new: Новый бренд
+  brand-edit: Редактировать бренд
+  f-brand-name: Название
+  f-brand-logo: Логотип
+  f-brand-description: Описание
+  f-brand-products: Продукты
+  btn-brand-new: Новый бренд
+
+  category-group-index: Группы
+  category-group-new: Новая группа
+  category-group-edit: Редактировать
+  f-category-group: Группа
+  f-category-groups: Группы
+  f-category-group-name: Название
+  f-category-group-categories: Категории
+  btn-category-group-new: Новая группа
+
+  category-index: Категории
+  f-category-name: Название
+  btn-category-new: Новая категория
+  category-new: Новая категория
+  category-edit: Редактировать
+  f-category-products: Продукты
+
+  product-index: Лист продуктов
+  product-new: Новый продукт
+  Product-edit: Редактировать
+  btn-product-new: Новый продукт
+  f-product-name: Название
+  f-product-brand: Бренд
+  f-product-category: Категорий
+  f-product-price: Цена
+  f-product-quantity: Количество
+  f-product-description: Описание
+  f-product-price: Цена
+  f-product-color: Цвет
+  f-specification: Спецификация
+  f-product-size: Размер
+  f-product-material: Материал
+  f-product-country: Производитель
+  f-product-chosen: Рекомендовано
+  f-product-images: Изображения
+
+  search-no-data: Не найдено продукта соответствующего требованиям
+
+  message-add-to-cart-success: Добавлено в корзину
+  message-already-added: Добавлено в корзину
+
+  no-product-data: Продукты ещё не опубликованы
+  nav-brand: Выбор бренда
+  order-btn-title: Сортировать по
+  order-btn-recent: Новизне
+  order-btn-qnt: Количеству
+  order-btn-price: Цене
+
+  product-brand: Бренд
+  product-quantity: Количество
+  product-quantity-none: Нет в наличиии
+  product-is-hidden: Продукт был скрыт
+  btn-add-to-cart: Добавить в корзину
+  btn-add-to-cart-none: Нет в наличии
+  btn-continue: Продолжить покупки
+  nav-currency: Валюта
+  wish-list-add: Добавить в желания
+  wish-list-remove: Удалить
+  best-matches: Рекомендации COSMETIC STORE
+  product-size: Размер
+  product-material: Материал
+  product-country: Производитель
+  product-color: Цвет
+  product-chosen: Рекомендовано
+
+  # will-paginate:
+  previous-label: <span class="fa fa-angle-double-left"></span>
+  next-label: <span class="fa fa-angle-double-right"></span>
+
+  cart-index: Корзина
+  cart-clear: Очистить корзину
+  cart-list: Корзина
+  f-cart-product-info: Информация о продукте
+  f-cart-product-price: Цена
+  f-cart-product-quantity: Количество
+  f-cart-product-count: Доступное количетсво
+  f-cart-shipping-fee: Цена доставки
+  f-cart-free-shipping: Бесплатная доставка
+  f-cart-total: Итоговая сумма
+  btn-checkout: Оплатить
+  cart-notice: Помните, нужно завершить оплату в течении часа.
+  cart-no-data: Нет продуктов в корзине.
+  cart-suggest: Рекомендуем：
+
+  account-order-index: Заказы
+  f-order-created-at: Создан
+  order-id: ID
+  order-total: Сумма
+  order-date: Дата
+  order-status: Статус
+  order-status-placed: Ожидается оплата.
+  order-status-paid: Оплачен, ожидается доставка.
+  order-status-shipping: Доставляется
+  order-status-shipped: Доставлен
+  order-status-cancelled: Отменён.
+  order-status-returned: Возвращён.
+  order-status-placed-a: Ожидается оплата.
+  order-status-paid-a: Ожидается доставка.
+  order-no-data: У вас нет заказов.
+
+  checkout-index: Информация о заказе
+  f-billing-info: Ваша информация
+  f-billing-name: Имя
+  f-billing-address: Адрес
+  f-shipping-info: Информация о доставке
+  f-shipping-name: Имя
+  f-shipping-phone: Телефон
+  f-shipping-address: Адрес
+  f-input-address: Пожалуйста введите адресс
+  f-payment-method: Платёжный метод
+  billing-name: Имя
+  billing-address: Адрес
+  shipping-name: Имя
+  shipping-phone: Телефон
+  shipping-address: Адрес
+  btn-order-create: Подтвердить заказ
+
+  
+  order-show: Детали заказа
+  btn-pay: Перейти к оплате
+  btn-apply-to-cancel: Подтвердить отмену
+  order-payment-method: Платёжный метод
+  order-paid: < Оплата заверщена, спасибо. >
+
+  
+  intro-index: Банеры
+  intro-new: Добавить
+  intro-edit: Редактировать
+  f-intro-title: Название
+  f-intro-content: Текст
+  f-intro-link: Ссылка
+  f-intro-image: Изображение
+  btn-intro-new: Добавить
+
+  
+  admin-order: Заказы
+  admin-product: Продукты
+  admin-brand: Бренды
+  admin-category: Категории
+  admin-homepage: Банеры
+  product:
+    stock: В наличии
+  
+  message-add-to-cart-success: Добавлено в корзину
+  message-already-added: Уже добавлено
+  message-confirm-clear-cart: Очистить корзину?
+  message-clear-cart-success: Корзина очищена
+  message-payment-success: Оплата заверщена
+  message-cancel-request-sent: Запрос на отмену прошёл, COSMETIC STORE свяжется с вами как можно скорее.
+  message-payment-failed: Оплата неуспешная
+
+  
+  account-wish-list-index: Список желаний
+  btn-move-to-cart: Добавить в корзину
+  wish-no-data: Список желаний пуст
+  wish-suggest: Рекомендуем：
+
+  th-featured-products: New
+  th-brands: Наши бренды
+  btn-buy-now: Купить
+
+# Footer
+  th-products: Продукты
+  link-latest: Последние продукты
+  link-exclusive: Рекомендуемые продукты
+  link-brands: Рекомендуемые бренды
+  th-service-info: Клиентам
+  link-shipping: О доставке
+  link-return: Об возврате
+  link-faq: FAQ
+  th-about-us: О нас
+  link-story: Истории брендов
+  link-media: Вопрос-ответ
+  link-contact: Свяжитесь с нами
+  order-index: Заказы
+  f-order-user: Имя пользователя
+  f-order-status: Статус
+  f-order-action: Order Actions
+  f-order-status-shipping: В пути
+  f-order-status-shipped: Доставлено
+  f-order-status-cancelled: Отменено
+  f-order-status-returned: Возвращено
+  order-state-paid: Оплачено
+  order-state-unpaid: Non-payment
+  btn-cancel-order: Отменить
+  btn-set-cancel: Отменить
+  btn-set-shipping: В пути
+  btn-set-shipped: Доставлено
+  btn-set-return: Возврат
+  cancelled: Заказ был отменёг
+  returned: Продукт возвращён

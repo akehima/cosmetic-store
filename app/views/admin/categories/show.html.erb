@@ -1,0 +1,12 @@
+
+<h1> <%= @category.name %> </h1>
+
+
+<h3><%= t('f-category-group') %></h3>
+<%= @category.category_group.name %>
+
+
+<h3><%= t('f-category-products') %></h3>
+<% @category.products.each do |product| %>
+  <li><%= link_to(product.title, admin_product_path(product)) %></li>
+<% end %>

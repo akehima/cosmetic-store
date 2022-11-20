@@ -1,0 +1,60 @@
+<div class="product-box">
+  <div class="container">
+    <%= render "common/menu" %>
+    <div class='row content-box'>
+      <div class='col-md-12'>
+        
+        <h3><i class='fa fa-gift'></i> <%= t('account-wish-list-index') %></h3>
+        <hr />
+        
+        <div class="row">
+          <% if @products.length > 0 %>
+
+            
+            <% @products.each do |product| %>
+              <div class="col-md-12 cart-item-box">
+                <%= link_to product_path(product) do %>
+                  <% if product.product_images.present? %>
+                    <%= image_tag(product.product_images[0].image.other.url)%>
+                  <% else %>
+                    <%= image_tag('http://via.placeholder.com/100x100&text=No Pic') %>
+                  <% end %>
+                <% end %>
+                <div class="name"><%= link_to(product.title, product_path(product)) %></div>
+                <div class="price"><%= render_product_price(product) %></div>
+                
+                <div>
+                  <%= link_to add_to_cart_account_product_path(product), method: :post do %>
+                    <%= t('btn-move-to-cart') %>
+                  <% end %>
+                </div>
+                
+                <div>
+                  <%= link_to remove_from_wish_list_account_product_path(product), method: :post do %>
+                    <i class='fa fa-close'></i>
+                  <% end %>
+                </div>
+                <hr />
+              </div>
+            <% end %>
+
+          
+          <% else %>
+
+            <div class="buy-box">
+              <h3><%= t('wish-no-data') %></h3>
+              <h3><%= t('wish-suggest') %></h3>
+              <br/>
+              <div class='col-md-12'>
+                <%= render "shared/suggest" %>
+              </div>
+              <div class='col-md-12'>
+                <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-lg btn-default' ) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,300 @@
+en:
+# title & brand
+  cosmetic-store: COSMETIC STORE
+
+# Devise
+  devise:
+    failure:
+      unauthenticated: You must login.
+      not_found_in_database: This account is not found.
+      invalid: The email or password is not correct.
+    sessions:
+      signed_in: Welcome！
+      signed_out: You have logged out.
+
+  dv-warn-email: Please input your email.
+  dv-warn-name: Please input your name.
+  dv-warn-pwd: The password is incorrect, please check again.
+  dv-warn-pwd-characters: Password must be 6 ~ 16 characters.
+
+  dv-login: Log In
+  dv-signup: Sign Up
+  dv-email: Email
+  dv-pwd: Password
+  dv-remember-me: Remember Me
+  dv-forgot-pwd: Forget Password?
+  dv-check-email: you@example.com
+  dv-name: User Name
+  dv-find-pwd: Find Password
+  dv-account-signin: Plase log in.
+  dv-no-account-signup: Sign up now.
+  dv-user: User
+  dv-admin: Administrator
+  dv-set-pwd: Set 6 ~ 16 characters.
+  dv-confirm-pwd: Confirm Password.
+
+  message-add-to-cart-success: Add the product to cart successfully！
+  message-already-added: This product has been added to cart.
+  message-confirm-clear-cart: Are you sure to clear the cart?
+  message-clear-cart-success: You have cleared the card successfully.
+  message-payment-success: Payment completed.
+  message-cancel-request-sent: The cancel request has been sent.
+  message-payment-failed: The payment failed.
+
+  order:
+    order_placed: Placed
+    paid: Paid
+    shipping: Shipping
+    shipped: Shiped
+    order_cancelled: Canceled
+    good_returned: Returned
+
+  user-sign-up: Sign Up
+  user-log-in: Log In
+  user-had-account: Please log in.
+  user-have-not-account: Sign up now.
+  user-forget-psw: Forget Password?
+  user-find-psw: Find Password
+  user-remember-me: Remember Me
+  my-profile: My Profile
+  name: Name
+  nickname: Nickname
+  address: Address
+  phone: Phone
+  birthday: Birthday
+  gender: Gender
+  save: Save
+  male: Male
+  female: Female
+  warning-not-admin: You are not admin.
+
+  # Navbar
+  signup: Sign Up
+  login: Log In
+  logout: Log Out
+  greeting: Hi!
+  wish-list: Wish List
+  cart: Cart
+  brand-access: Brand Access
+  recommend-access: Recommend Access
+  product-access: Products
+  admin-access: Admin Console
+  account-order-access: My Orders
+  user-center: My Profile
+  user-order: My Orders
+  language: Change Language
+  keywords: Search Product
+
+  f-options: Operation Options
+  f-hide: Hide
+  f-submit: Submit
+  f-image-upload: Upload Image
+  notice-no-image: No Image
+  btn-publish: Publish
+  btn-hide: Hide
+  btn-edit: Edit
+  btn-delete: Delete
+
+  brand-index: Brand Index
+  brand-new: New Brand
+  brand-edit: Edit Brand
+  f-brand-name: Brand Name
+  f-brand-logo: Brand Logo
+  f-brand-description: Brand Description
+  f-brand-products: Brand Products
+  btn-brand-new: New Brand
+
+  category-group-index: Category Group Index
+  category-group-new: New Category Group
+  category-group-edit: Edit Category Group
+  f-category-group: Category Group
+  f-category-groups: Category Groups
+  f-category-group-name: Category Group Name
+  f-category-group-categories: Categories
+  btn-category-group-new: New Category Group
+
+  category-index: Category Index
+  f-category-name: Category Name
+  btn-category-new: New Category
+  category-new: New Category
+  category-edit: Edit Category
+  f-category-products: Category Products
+
+  product-index: Product List
+  product-new: New Product
+  Product-edit: Edit Product
+  btn-product-new: New Product
+  f-product-name: Product Name
+  f-product-brand: Product Brand
+  f-product-category: Product Category
+  f-product-price: Product Price
+  f-product-quantity: Product Quantity
+  f-product-description: Product Description
+  f-product-price: Product Price
+  f-product-color: Product Color
+  f-specification: Specification
+  f-product-size: Product Size
+  f-product-material: Product Material
+  f-product-country: Product Origin
+  f-product-chosen: Product Selection
+  f-product-images: Product Images
+
+  search-no-data: No product meeting the search criteria!
+
+  message-add-to-cart-success: You added a product to cart!
+  message-already-added: This item has been added to the cart.
+
+  no-product-data: The products are yet published.
+  nav-brand: Brand Selection
+  order-btn-title: Order by
+  order-btn-hot: By Hotness
+  order-btn-recent: Recent
+  order-btn-qnt: Quantity
+  order-btn-price-h: Price High to Low
+  order-btn-price-l: Price Low to High
+  order-btn-price: Price
+
+  product-brand: Brand
+  product-quantity: Quantity
+  product-quantity-none: No Stock
+  product-is-hidden: This product is off the shelf.
+  btn-add-to-cart: Add to Cart
+  btn-add-to-cart-none: No More Stock
+  btn-continue: Keep on Shopping
+  nav-currency: Currency
+  wish-list-add: Add to Wish List
+  wish-list-remove: Remove
+  best-matches: COSMETIC STORE Recommendation
+  product-size: Size
+  product-material: Material
+  product-country: Origin
+  product-color: Color
+  product-chosen: Selection
+
+  # will-paginate:
+  previous-label: <span class="fa fa-angle-double-left"></span>
+  next-label: <span class="fa fa-angle-double-right"></span>
+
+  cart-index: Cart
+  cart-clear: Clear Cart
+  cart-list: Cart List
+  f-cart-product-info: Product Info
+  f-cart-product-price: Product Price
+  f-cart-product-quantity: Product Quantity
+  f-cart-product-count: Product Amount
+  f-cart-shipping-fee: Shipping Fee
+  f-cart-free-shipping: Free Shipping
+  f-cart-total: Total Amount：
+  btn-checkout: Checkout
+  cart-notice: Reminder, please complete payment within one hour.
+  cart-no-data: No product in the cart.
+  cart-suggest: COSMETIC STORE suggests for you：
+
+  account-order-index: Order List
+  f-order-created-at: Order Created Date
+  order-id: Order ID
+  order-total: Order Amount
+  order-date: Order Date
+  order-status: Oder Status
+  order-status-placed: Order placed, pending payment.
+  order-status-paid: Order paid, pending shipping.
+  order-status-shipping: Shipping
+  order-status-shipped: Order shipped.
+  order-status-cancelled: Order Cancelled.
+  order-status-returned: Order products returned.
+  order-status-placed-a: Order placed, pending payment.
+  order-status-paid-a: Order paid, pending shipping.
+  order-no-data: You haven't placed order yet.
+
+  checkout-index: Order Info
+  f-billing-info: Billing Info
+  f-billing-name: Billing Name
+  f-billing-address: Billing Address
+  f-shipping-info: Shipping Info
+  f-shipping-name: Shipping Name
+  f-shipping-phone: Shipping Phone No.
+  f-shipping-address: Shipping Address
+  f-input-address: Please input address
+  f-payment-method: Payment Method
+  billing-name: Billing Name
+  billing-address: Billing Address
+  shipping-name: Shipping Name
+  shipping-phone: Shipping Phone No.
+  shipping-address: Shipping Address
+  btn-order-create: Confirm Order
+
+  
+  order-show: Order Details
+  btn-pay: Go to Payment
+  btn-apply-to-cancel: Apply to Cancel
+  order-payment-method: Payment Method
+  order-paid: < Payment completed, thank you. >
+
+  
+  intro-index: Intro List
+  intro-new: Add Intro
+  intro-edit: Edit Intro
+  f-intro-title: Intro Title
+  f-intro-content: Intro Content
+  f-intro-link: Intro Link
+  f-intro-image: Intro Image
+  btn-intro-new: Add Intro
+
+  
+  admin-order: Orders
+  admin-product: Products
+  admin-brand: Brands
+  admin-category: Categories
+  admin-homepage: Homepage Banner
+  product:
+    stock: Stock
+  
+  message-add-to-cart-success: Added to cart.
+  message-already-added: Already added.
+  message-confirm-clear-cart: Are you sure to clear the cart?
+  message-clear-cart-success: The cart is cleared.
+  message-payment-success: Payment completed.
+  message-cancel-request-sent: Cancel request is sent, COSMETIC STORE will contact you soon.
+  message-payment-failed: Payment isn't successful.
+
+  
+  account-wish-list-index: Wish List
+  btn-move-to-cart: Add to cart
+  wish-no-data: No item in wish list.
+  wish-suggest: COSMETIC STORE Recommend For You：
+
+
+  th-featured-products: Featured Products
+  th-brands: Featured Brands
+  btn-buy-now: Buy Now
+
+# Footer
+  th-products: Products
+  link-latest: Latest Products
+  link-exclusive: Featured Products
+  link-brands: Featured Brands
+  th-service-info: Buyer Reading
+  link-shipping: About Shipping
+  link-return: About Return
+  link-faq: FAQ
+  th-about-us: About Us
+  link-story: Brand Stories
+  link-media: Media Reports
+  link-contact: Contact Us
+  order-index: Order List
+  f-order-user: User Name
+  f-order-status: Order Status
+  f-order-action: Order Actions
+  f-order-status-shipping: Shipped
+  f-order-status-shipped: Delivered
+  f-order-status-cancelled: Cancelled
+  f-order-status-returned: Returned
+  order-state-paid: Paid
+  order-state-unpaid: Non-payment
+  btn-cancel-order: Cancel
+  btn-set-cancel: Cancel
+  btn-set-shipping: Shipped
+  btn-set-shipped: Delivered
+  btn-set-return: Return
+  cancelled: The order has been cancelled.
+  returned: The products have been returned.

@@ -1,0 +1,91 @@
+<div class='product-box'>
+  <div class='container'>
+    <div class='row content-box order-box'>
+      <div class='col-md-8 col-md-offset-2'>
+        
+        <h3><i class='fa fa-list-alt'></i> <%= t('order-show') %></h3>
+        <table class='table table-hover'>
+          
+          <thead>
+            <tr>
+              <th colspan='2'><%= t('f-cart-product-info') %></th>
+              <th><%= t('f-cart-product-price') %></th>
+              <th><%= t('f-cart-product-quantity') %></th>
+              <th><%= t('f-cart-product-count') %></th>
+            </tr>
+          </thead>
+          
+          <tbody>
+          <% @product_lists.each do |product_list| %>
+          <tr>
+            <td>
+              
+                <% if product_list.product.product_images.present? %>
+                  <%= image_tag(product_list.product.product_images[0].image.other.url)%>
+                <% else %>
+                  <%= image_tag('http://via.placeholder.com/200x200&text=No Pic') %>
+                <% end %>
+              </td>
+            <td class='width-50'><%= link_to(product_list.product.title, product_path(product_list.product)) %></td>
+            <td><%= render_product_price(product_list.product) %></td>
+            <td>x <%=product_list.quantity %></td>
+            <td><%= render_product_price_count(product_list.product,product_list.quantity) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+        
+        <div class='totol clearfix'>
+          <span class='pull-right'>
+            <%= t('f-cart-total') %>
+              <%= @order.currency %> <%= @order.total %>
+          </span>
+        </div>
+
+        
+        <h3><i class='fa fa-credit-card'></i> <%= t('checkout-index') %></h3>
+        
+        <table class='table'>
+          <tbody>
+            
+            <thead>
+              <tr>
+                <th>
+                  <%= t('f-billing-info') %>
+                </th>
+              </tr>
+            </thead>
+            <tr>
+              <td>
+                <strong><%= t('f-billing-name') %>：</strong><%= @order.billing_name%><br/>
+                <strong><%= t('f-billing-address') %>：</strong><%= @order.billing_address%><br/>
+                <strong><%= t('f-payment-method') %>：</strong><%= @order.payment_method %><br/>
+              </td>
+            </tr>
+            
+            <thead>
+              <tr>
+                <th>
+                  <%= t('f-shipping-info') %>
+                </th>
+              </tr>
+            </thead>
+            <tr>
+              <td>
+                <strong><%= t('f-shipping-name') %>：</strong><%= @order.shipping_name%><br/>
+                <strong><%= t('f-shipping-address') %>：</strong><%= @order.shipping_address%>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        
+        <%= render 'orders/payment' %>
+        <% if @order.is_paid? %>
+          <h4><%= t('order-paid') %></h4>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<%= link_to product_path(product) do %>
+  <% if product.product_images.present? %>
+    <%= image_tag(product.product_images[0].image.other.url)%>
+  <% else %>
+    <%= image_tag('http://via.placeholder.com/100x100&text=No Pic') %>
+  <% end %>
+<% end %>

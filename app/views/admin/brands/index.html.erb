@@ -1,0 +1,50 @@
+
+<h2><%= t('brand-index') %></h2>
+
+
+<div class="pull-right">
+  <%= link_to(t('btn-brand-new'), new_admin_brand_path, :class => 'btn btn-md btn-info')%>
+</div>
+
+
+<table class="table">
+  
+  <thead>
+    <tr>
+      <th><%= t('f-brand-name') %></th>
+      <th><%= t('f-brand-description') %></th>
+      <th><%= t('f-options') %></th>
+    </tr>
+  </thead>
+
+  
+  <% @brands.each do |brand| %>
+    <tr>
+      <td><%= render_brand_status(brand) %> <%= link_to(brand.name, admin_brand_path(brand)) %></td>
+      <td class="description-box"><%= simple_format(brand.description) %></td>
+      
+      <td class="action-box">
+        
+        <%= link_to(edit_admin_brand_path(brand), class: "btn btn-md btn-default") do %>
+          <span class="fa fa-pencil"></span>
+        <% end %>
+
+        <% if brand.is_hidden %>
+          <%= link_to(publish_admin_brand_path(brand), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+            <span class="fa fa-eye"></span>
+          <% end %>
+        <% else %>
+          <%= link_to(hide_admin_brand_path(brand), :method => :post, data: { confirm: "Определить бренд?" }, class: "btn btn-md btn-default") do %>
+            <span class="fa fa-eye-slash"></span>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="col-md-12">
+  <div class="text-center">
+    <%= will_paginate @brands, renderer: BootstrapPagination::Rails, :previous_label => t('previous-label'), :next_label => t('next-label') %>
+  </div>
+</div>
